@@ -7,8 +7,7 @@ export const configureSession = () => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: config.nodeEnv === 'bubbaproduction', // Use secure cookies only in production
-      httpOnly: true,
+      secure: config.nodeEnv === 'bubbaproduction' // Use secure cookies only in production
     },
   });
 };
