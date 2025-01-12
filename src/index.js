@@ -12,7 +12,7 @@ import User from "./models/user.js";
 import Todo from "./models/todo.js";
 import cors from "cors";
 import appInsights from "applicationinsights";
-appInsights.setup("5f6d969e-871c-47d4-956e-eb3302f6b164").start();
+appInsights.setup("641db4df-aad1-41a2-afb9-316babb004c5").start();
 const client = appInsights.defaultClient; // Example of logging an event client.trackEvent({ name: "CustomEvent", properties: { customProperty: "customValue" } }); // Example of logging a trace message client.trackTrace({ message: "This is a trace message" });
 
 const app = express();
