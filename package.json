@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "debug": "node --inspect ./src/index.js"
+    "debug": "node --inspect npm",
+    "start": "node ./src/index.js"
   },
   "dependencies": {
     "applicationinsights": "^3.4.0",
