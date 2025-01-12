@@ -12,7 +12,7 @@ const config = {
   callbackURL:
     process.env.GOOGLE_CALLBACK_URL ||
     'http://localhost:5050/api/v1/auth/google/callback',
-  port: process.env.PORT || 5050,
+  port: process.env.PORT || 80,
   dbSchema: process.env.DB_NAME || 'google_test',
   dbUser: process.env.DB_USER,
   dbPwd: process.env.DB_PASS,
