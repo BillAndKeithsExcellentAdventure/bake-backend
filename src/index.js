@@ -35,7 +35,7 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   res.send('<h1>Hello from the server!<h1>');
 }); // This prefix is used for all authentication-related routes, including Google login and logout.
 
