@@ -7,7 +7,7 @@ export const configureSession = () => {
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: config.nodeEnv === 'production', // Use secure cookies only in production
+      secure: config.nodeEnv === 'production', // Use secure cookies only in production (https)
       httpOnly: true,
     },
   });

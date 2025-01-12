@@ -10,7 +10,7 @@ const config = {
   sessionSecret: process.env.SESSION_SECRET,
   nodeEnv: process.env.NODE_ENV || 'development',
   callbackURL:
-    process.env.CALLBACK_URL ||
+    process.env.GOOGLE_CALLBACK_URL ||
     'http://localhost:5050/api/v1/auth/google/callback',
   port: process.env.PORT || 5050,
   dbSchema: process.env.DB_NAME || 'google_test',
