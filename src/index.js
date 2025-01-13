@@ -11,9 +11,9 @@ import { errorHandler } from "./middlewares.js"; // Import error handler middlew
 import User from "./models/user.js";
 import Todo from "./models/todo.js";
 import cors from "cors";
-import appInsights from "applicationinsights";
-appInsights.setup("641db4df-aad1-41a2-afb9-316babb004c5").start();
-const client = appInsights.defaultClient; // Example of logging an event client.trackEvent({ name: "CustomEvent", properties: { customProperty: "customValue" } }); // Example of logging a trace message client.trackTrace({ message: "This is a trace message" });
+// import appInsights from "applicationinsights";
+// appInsights.setup("641db4df-aad1-41a2-afb9-316babb004c5").start();
+// const client = appInsights.defaultClient; // Example of logging an event client.trackEvent({ name: "CustomEvent", properties: { customProperty: "customValue" } }); // Example of logging a trace message client.trackTrace({ message: "This is a trace message" });
 
 const app = express();
 
@@ -40,10 +40,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Example of logging a trace message
-client.trackTrace({message: "This proves our website is running."});
+// client.trackTrace({message: "This proves our website is running."});
 
 app.get("/home", (req, res) => {
-  client.trackTrace({message: `This is where we try to handle the Home. ${req}.`});
+  //client.trackTrace({message: `This is where we try to handle the Home. ${req}.`});
   res.send("<h1>Hello from the server!<h1>");
 }); // This route is accessible to everyone
 
