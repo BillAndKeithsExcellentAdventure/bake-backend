@@ -17,13 +17,14 @@ import cors from 'cors';
 
 const app = express();
 
-// Alternatively, enable CORS only for specific origins
-app.use(
-  cors({
-    origin: `${config.reactAppUrl}`,
-    credentials: true,
-  })
-);
+// enable CORS only for specific origins
+//app.use(
+//  cors({
+//    origin: `${config.reactAppUrl}`,
+//    credentials: true,
+//  })
+//);
+app.use(cors()); // Enable CORS for all origins
 
 // Initialize Passport.js
 configurePassport();

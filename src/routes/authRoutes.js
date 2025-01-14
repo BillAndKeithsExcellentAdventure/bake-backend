@@ -27,9 +27,9 @@ authRouter.get(
     console.log(
       '===== User authenticated via Google - sending token back to frontend ==== '
     );
-    res.redirect(
-      `${config.reactAppUrl}?token=${token}&email=${user.email}&fullName=${user.fullName}`
-    ); // Redirect to the React app after login
+    const returnTo = `${config.reactAppUrl}?token=${token}&email=${user.email}&fullName=${user.fullName}`;
+    console.log(`returnTo: ${returnTo}`);
+    res.redirect(returnTo); // Redirect to the React app after login
   }
 );
 
