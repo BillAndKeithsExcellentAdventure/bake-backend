@@ -1,16 +1,22 @@
-import { Sequelize } from 'sequelize';
-import config from '../config.js';
-import fs from 'fs';
-import path from 'path';
+import { Sequelize } from "sequelize";
+import config from "../config.js";
+import fs from "fs";
+import path from "path";
 
 // If using MySql
 
-  const sequelize = new Sequelize(config.dbSchema, config.dbUser, config.dbPwd, {
+const sequelize = new Sequelize(config.dbSchema, config.dbUser, config.dbPwd, {
   host: config.dbServer,
-  dialect: 'mysql',
+  dialect: "mysql",
   port: config.dbPort,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+      ca: fs.readFileSync("./cert/DigiCertGlobalRootCA.crt.pem"),
+    },
+  },
 });
-
 
 /* ------------------------------------------------------
 // Since the SQLite database will be created if it does not exist, ensure the database folder exists
