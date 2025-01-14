@@ -17,7 +17,8 @@ const app = express();
 // Alternatively, enable CORS only for specific origins
 app.use(
   cors({
-    origin: 'http://localhost:3002', // Replace with your frontend's URL
+    origin: `${config.reactAppUrl}`,
+    credentials: true,
   })
 );
 
@@ -37,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello from the server!<h1>');
-}); // This prefix is used for all authentication-related routes, including Google login and logout.
+}); // Test route
 
 // Use the authentication routes under /api/v1/auth
 app.use('/api/v1/auth', authRoutes); // This prefix is used for all authentication-related routes, including Google login and logout.

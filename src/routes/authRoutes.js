@@ -19,7 +19,17 @@ authRouter.get(
   '/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect('http://localhost:3002'); // Redirect to the React app after login
+    const { user } = req;
+    // Generate JWT token here
+    const token = jwt.sign({ user }, config.jwtSecret, {
+      expiresIn: '1d',
+    });
+    console.log(
+      '===== User authenticated via Google - sending token back to frontend ==== '
+    );
+    res.redirect(
+      `${config.reactAppUrl}?token=${token}&email=${user.email}&fullName=${user.fullName}`
+    ); // Redirect to the React app after login
   }
 );
 

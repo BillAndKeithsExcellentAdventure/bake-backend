@@ -9,6 +9,7 @@ export const configureSession = () => {
     cookie: {
       secure: config.nodeEnv === 'production', // Use secure cookies only in production (https)
       httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 24 hours
     },
   });
 };
