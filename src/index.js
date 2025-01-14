@@ -24,7 +24,14 @@ const app = express();
 //    credentials: true,
 //  })
 //);
-app.use(cors()); // Enable CORS for all origins
+
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+); // Enable CORS for all origins
 
 // Initialize Passport.js
 configurePassport();
