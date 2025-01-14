@@ -1,9 +1,12 @@
 {
   "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "debug": "node --inspect ./src/index.js"
+    "debug": "node --inspect ./src/index.js",
+    "start": "node ./src/index.js"
   },
   "dependencies": {
+    "applicationinsights": "^3.4.0",
     "cookie-session": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
