@@ -4,14 +4,15 @@ import fs from 'fs';
 import path from 'path';
 
 // If using MySql
-/* ------------------------------------------------------
+
   const sequelize = new Sequelize(config.dbSchema, config.dbUser, config.dbPwd, {
   host: config.dbServer,
   dialect: 'mysql',
   port: config.dbPort,
 });
--------------------------------------------------------- */
 
+
+/* ------------------------------------------------------
 // Since the SQLite database will be created if it does not exist, ensure the database folder exists
 const directoryPath = path.dirname(config.sqliteDbUrl);
 if (!fs.existsSync(directoryPath)) {
@@ -28,5 +29,5 @@ const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: config.sqliteDbUrl,
 });
-
+-------------------------------------------------------- */
 export default sequelize;
